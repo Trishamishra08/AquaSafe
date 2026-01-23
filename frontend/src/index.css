@@ -42,6 +42,7 @@
 		background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
 		color: var(--text-on-dark);
 		border-bottom: 1px solid rgba(255,255,255,0.06);
+		font-size: 16px; /* restore navbar font size to be unaffected by reduced base */
 	}
 
 	.navbar-bg .nav-link {
