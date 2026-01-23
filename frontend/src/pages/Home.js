@@ -79,23 +79,32 @@ const Home = () => {
         backgroundAttachment: 'fixed'
       }}>
         <div className="absolute inset-0" style={{background: 'linear-gradient(90deg, rgba(34,40,49,0.6), rgba(57,62,70,0.6))'}}></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-          <div className="text-center">
-            <div className="mb-8">
-              <div className="inline-flex items-center justify-center w-24 h-24 bg-white/10 backdrop-blur-sm rounded-full mb-6">
-                <Droplets className="w-12 h-12 text-white" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col items-center justify-center min-h-[70vh]">
+          <div className="text-center w-full">
+            <div className="mb-4 flex flex-col items-center">
+              <div className="inline-flex items-center justify-center w-20 h-20 logo-bg rounded-full mb-4">
+                <Droplets className="w-10 h-10 text-white" />
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-lg">
+              <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-2 drop-shadow-lg">
                 Aqua Safe
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300">
-                 
-                </span>
               </h1>
+              <p className="text-sm md:text-base text-blue-100 max-w-2xl mx-auto mb-4">
+                Advanced pollution detection and real-time monitoring
+              </p>
+
+              {/* Move Report button up so it sits beneath the tagline */}
+              <div className="mb-6">
+                <Link to="/report">
+                  <button className="btn-primary">
+                    Report Issue
+                  </button>
+                </Link>
+              </div>
             </div>
 
-            {/* Slideshow */}
-            <div className="relative mb-12">
-              <div className="h-64 flex items-center justify-center">
+            {/* Slideshow (reduced height) */}
+            <div className="relative mb-8">
+              <div className="h-48 flex items-center justify-center">
                 {slides.map((slide, index) => (
                   <div
                     key={index}
