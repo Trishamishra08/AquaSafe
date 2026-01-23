@@ -35,6 +35,29 @@
 		background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
 	}
 
+	/* Navbar background using primary palette and text adjustments */
+	.navbar-bg {
+		background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+		color: var(--text-on-dark);
+		border-bottom: 1px solid rgba(255,255,255,0.06);
+	}
+
+	.navbar-bg .nav-link {
+		color: var(--text-on-dark);
+	}
+
+	.navbar-bg .nav-link:hover {
+		color: var(--color-muted);
+	}
+
+	.navbar-bg .mobile-link {
+		color: var(--text-on-dark);
+	}
+
+	.navbar-bg button {
+		color: var(--text-on-dark);
+	}
+
 	/* Primary action button */
 	.btn-primary {
 		background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
