@@ -82,11 +82,11 @@
 		@apply px-3 py-2 rounded-md text-sm font-medium border border-transparent hover:shadow-sm transition;
 	}
 	.nav-link {
-		@apply text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors;
+		@apply text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base md:text-lg font-medium transition-colors;
 	}
 
 	.mobile-link {
-		@apply block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium transition-colors;
+		@apply block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base md:text-lg font-medium transition-colors;
 	}
 
 	.btn-purple {
