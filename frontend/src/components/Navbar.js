@@ -21,7 +21,7 @@ const Navbar = () => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
+            <div className="flex items-center justify-center w-10 h-10 logo-bg rounded-lg">
               <Droplets className="w-6 h-6 text-white" />
             </div>
             <span className="text-xl font-bold text-gray-900 hidden sm:block">
@@ -36,19 +36,14 @@ const Navbar = () => {
             <Link to="/contact" className="nav-link">Contact</Link>
 
             {!user ? (
-              <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4">
                 <Link to="/login" className="nav-link">Sign In</Link>
-                <Link
-                  to="/register"
-                  className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-lg transition"
-                >
-                  Register
-                </Link>
+                <Link to="/register" className="btn-accent">Register</Link>
               </div>
             ) : (
               <div className="flex items-center space-x-4">
                 {user.role === 'admin' ? (
-                  <Link to="/admin" className="btn-purple">
+                  <Link to="/admin" className="btn-primary">
                     Admin Dashboard
                   </Link>
                 ) : (
@@ -57,7 +52,7 @@ const Navbar = () => {
                   </Link>
                 )}
 
-                <Link to="/report" className="btn-red">
+                <Link to="/report" className="btn-accent">
                   Report Issue
                 </Link>
 
@@ -91,14 +86,14 @@ const Navbar = () => {
                 <Link to="/login" onClick={() => setIsOpen(false)} className="mobile-link">
                   Sign In
                 </Link>
-                <Link to="/register" onClick={() => setIsOpen(false)} className="btn-blue block text-center">
+                <Link to="/register" onClick={() => setIsOpen(false)} className="btn-accent block text-center">
                   Register
                 </Link>
               </>
             ) : (
               <>
-                {user.role === 'admin' ? (
-                  <Link to="/admin" onClick={() => setIsOpen(false)} className="btn-purple block text-center">
+                  {user.role === 'admin' ? (
+                  <Link to="/admin" onClick={() => setIsOpen(false)} className="btn-primary block text-center">
                     Admin Dashboard
                   </Link>
                 ) : (
@@ -107,7 +102,7 @@ const Navbar = () => {
                   </Link>
                 )}
 
-                <Link to="/report" onClick={() => setIsOpen(false)} className="btn-red block text-center">
+                <Link to="/report" onClick={() => setIsOpen(false)} className="btn-accent block text-center">
                   Report Issue
                 </Link>
 

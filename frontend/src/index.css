@@ -16,6 +16,45 @@
 }
 
 @layer components {
+	:root {
+		--color-primary: #222831; /* deep charcoal */
+		--color-secondary: #393E46; /* slate */
+		--color-accent: #948979; /* warm taupe */
+		--color-muted: #DFD0B8; /* light parchment */
+		--text-on-dark: #ffffff;
+		--text-on-light: #222831;
+	}
+
+	/* Site background gradient using palette */
+	.site-bg {
+		background: linear-gradient(180deg, var(--color-muted) 0%, rgba(255,255,255,0.6) 50%);
+	}
+
+	/* Logo gradient using primary -> secondary */
+	.logo-bg {
+		background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+	}
+
+	/* Primary action button */
+	.btn-primary {
+		background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+		color: var(--text-on-dark);
+		@apply px-4 py-2 rounded-lg text-sm font-medium shadow-md hover:scale-105 transform transition;
+	}
+
+	/* Accent action (register/report) */
+	.btn-accent {
+		background: linear-gradient(90deg, var(--color-accent), var(--color-muted));
+		color: var(--text-on-dark);
+		@apply px-4 py-2 rounded-lg text-sm font-medium shadow-md hover:scale-105 transform transition;
+	}
+
+	/* Muted button style for secondary actions */
+	.btn-muted {
+		background: var(--color-muted);
+		color: var(--text-on-dark);
+		@apply px-3 py-2 rounded-md text-sm font-medium border border-transparent hover:shadow-sm transition;
+	}
 	.nav-link {
 		@apply text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors;
 	}
@@ -39,5 +78,6 @@
 	/* Fancy card used on home features */
 	.feature-card {
 		@apply rounded-2xl p-8 border-2 bg-white/60 backdrop-blur-sm;
+		border-color: rgba(34,40,49,0.08);
 	}
 }

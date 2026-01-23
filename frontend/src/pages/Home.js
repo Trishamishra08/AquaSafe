@@ -70,7 +70,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen site-bg">
       {/* Hero Section with Slideshow */}
       <div className={`relative overflow-hidden transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`} style={{
         backgroundImage: `url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
@@ -78,7 +78,7 @@ const Home = () => {
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
       }}>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/60 to-indigo-900/60"></div>
+        <div className="absolute inset-0" style={{background: 'linear-gradient(90deg, rgba(34,40,49,0.6), rgba(57,62,70,0.6))'}}></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
           <div className="text-center">
             <div className="mb-8">
@@ -132,11 +132,10 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/report">
-                <button className="group relative px-8 py-4 bg-white text-blue-600 font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                  <span className="relative z-10">Report Issue</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <button className="btn-primary">
+                  Report Issue
                 </button>
               </Link>
             </div>
@@ -183,18 +182,18 @@ const Home = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`group relative ${feature.bgColor} ${feature.borderColor} border-2 rounded-2xl p-8 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 cursor-pointer`}
+                className={`group relative feature-card border-2 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 cursor-pointer`}
               >
-                <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`} style={{background: `linear-gradient(90deg, ${index===0? 'var(--color-primary)' : index===1? 'var(--color-secondary)' : 'var(--color-accent)' }, rgba(0,0,0,0.06))`}}>
                   <div className="text-white">{feature.icon}</div>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[var(--color-primary)] transition-colors duration-300">
                   {feature.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
                   {feature.description}
                 </p>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" style={{background: 'linear-gradient(90deg, rgba(255,255,255,0.02), rgba(34,40,49,0.02))'}}></div>
               </div>
             ))}
           </div>
