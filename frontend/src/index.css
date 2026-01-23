@@ -7,6 +7,8 @@
 @layer base {
 	html, body, #root {
 		height: 100%;
+		/* Reduce base font size for overall smaller typography */
+		font-size: 14px;
 	}
 
 	body {

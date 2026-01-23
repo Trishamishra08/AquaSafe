@@ -81,7 +81,7 @@ const Home = () => {
         <div className="absolute inset-0" style={{background: 'linear-gradient(90deg, rgba(34,40,49,0.6), rgba(57,62,70,0.6))'}}></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col items-center justify-center min-h-[70vh]">
           <div className="text-center w-full">
-            <div className="mb-4 flex flex-col items-center">
+              <div className="mb-4 flex flex-col items-center">
               <div className="inline-flex items-center justify-center w-20 h-20 logo-bg rounded-full mb-4">
                 <Droplets className="w-10 h-10 text-white" />
               </div>
@@ -91,15 +91,6 @@ const Home = () => {
               <p className="text-sm md:text-base text-blue-100 max-w-2xl mx-auto mb-4">
                 Advanced pollution detection and real-time monitoring
               </p>
-
-              {/* Move Report button up so it sits beneath the tagline */}
-              <div className="mb-6">
-                <Link to="/report">
-                  <button className="btn-primary">
-                    Report Issue
-                  </button>
-                </Link>
-              </div>
             </div>
 
             {/* Slideshow (reduced height) */}
